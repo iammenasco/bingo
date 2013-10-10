@@ -1,0 +1,67 @@
+/* See readme.txt for list of "To Do" items remaining */
+/* All images from http://subtlepatterns.com */
+body {
+	background-image: url('../images/board.png');
+/*	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;*/
+}
+h1 {
+	font-family: sans-serif;
+	color: #368DDA;
+	text-align: center;
+	font-size: 250%;
+}
+p {
+	font-family: sans-serif;
+	color: #368DDA;
+}
+.board{
+	height: 75%;
+	width: 100%;
+	margin-left: 2%;
+	margin-right: auto;
+}
+.row {
+	height: 20%;
+}
+.tile {
+	border-style: solid;
+	background-color: transparent;
+	width: 15%;
+	height: 50%;
+	float: left;
+	color: white;
+	padding: 2.5% 1% 0%;
+	border-radius: 10px;
+	border-style: solid;
+	margin: 1%;
+	text-align: center;
+	font-family: sans-serif;
+	font-size: 150%;
+	background-image: url('../images/tile.png');
+	transition: all 0.5s linear;
+	-webkit-trasnform-style: preserve-3d;
+}
+
+.container {
+	-webkit-perspective: 1000;
+	z-index: 1;
+}
+
+.front, .back {
+    -webkit-backface-visibility: hidden;
+	position: absolute;
+}
+
+.back {
+	display: block;
+	-webkit-transform: rotatey(180deg);
+}
+
+.front {
+	z-index: 5;
+}

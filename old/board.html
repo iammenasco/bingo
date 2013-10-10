@@ -1,0 +1,134 @@
+<html>
+<head>
+	<title>Grid Test</title>
+	<style type="text/css">
+	.board{
+		width: 100%;
+		margin-left: 2%;
+		margin-right: auto;
+	}
+	.row{
+		height: 20%;
+	}
+	.tile{
+		width:15%;
+		height: 50%;
+		float: left;
+		border-radius: 10px;
+		padding: 1%;
+		border-style: solid;
+		margin: 1%;
+		text-align: center;
+		font-family: sans-serif;
+
+	}
+	</style>
+	<script type="text/JavaScript">
+			
+		function marked(divObj, row, tile){
+			//window.alert("this tile is marked");
+			
+			if (divObj.style.backgroundColor == 'green'){
+				divObj.style.backgroundColor = 'transparent';
+			}
+			else if (row == 3 && tile == 3){
+				divObj.style.backgroundColor = 'blue';
+			}
+			else {
+				divObj.style.backgroundColor = 'green';
+				console.log("Row: " + row);
+				console.log("Tile: " + tile);
+			}
+		}
+</script>	
+</head>
+<body>
+	<div class="board">
+		<div class="row">
+			<div class="tile" id="1" onclick="marked(this, 1, 1)"></div> 
+			<div class="tile" id="2" onclick="marked(this, 1, 2)"></div>
+			<div class="tile" id="3" onclick="marked(this, 1, 3)"></div>
+			<div class="tile" id="4" onclick="marked(this, 1, 4)"></div>
+			<div class="tile" id="5" onclick="marked(this, 1, 5)"></div>
+		</div>
+		<div class="row">
+			<div class="tile" id="6" onclick="marked(this, 2, 1)"></div>
+			<div class="tile" id="7" onclick="marked(this, 2, 2)"></div>
+			<div class="tile" id="8" onclick="marked(this, 2, 3)"></div>
+			<div class="tile" id="9" onclick="marked(this, 2, 4)"></div>
+			<div class="tile" id="10" onclick="marked(this, 2, 5)"></div>
+		</div>
+		<div class="row">
+			<div class="tile" id="11" onclick="marked(this, 3, 1)"></div>
+			<div class="tile" id="12" onclick="marked(this, 3, 2)"></div>
+			<div class="tile" id="13" onclick="marked(this, 3, 3)"></div>
+			<div class="tile" id="14" onclick="marked(this, 3, 4)"></div>
+			<div class="tile" id="15" onclick="marked(this, 3, 5)"></div>
+		</div>
+		<div class="row">
+			<div class="tile" id="16" onclick="marked(this, 4, 1)"></div>
+			<div class="tile" id="17" onclick="marked(this, 4, 2)"></div>
+			<div class="tile" id="18" onclick="marked(this, 4, 3)"></div>
+			<div class="tile" id="19" onclick="marked(this, 4, 4)"></div>
+			<div class="tile" id="20" onclick="marked(this, 4, 5)"></div>
+		</div>
+		<div class="row">
+			<div class="tile" id="21" onclick="marked(this, 5, 1)"></div>
+			<div class="tile" id="22" onclick="marked(this, 5, 2)"></div>
+			<div class="tile" id="23" onclick="marked(this, 5, 3)"></div>
+			<div class="tile" id="24" onclick="marked(this, 5, 4)"></div>
+			<div class="tile" id="25" onclick="marked(this, 5, 5)"></div>
+		</div>
+	</div>
+	
+	<script type="text/javascript">
+	var JSONObject= {
+		"1": "Joseph Smith",
+		"2": "1820", 
+		"3": "Restoration",
+		"4": "Pillar of Light",
+		"5": "Darkness",
+		"6": "If any lack wisdom", 
+		"7": "Upstate Newyork",
+		"8": "Palmyra",
+		"9": "Moroni",
+		"10": "Priesthood", 
+		"11": "First Vision",
+		"12": "Apostasy",
+		"13": "Hyrum Smith",
+		"14": "Book of Mormon", 
+		"15": "Dispensation",
+		"16": "Doctrine of Christ",
+		"17": "Prophet",
+		"18": "Amos 3:7", 
+		"19": "Moroni 10:3&#45;5",
+		"20": "Pray",
+		"21": "Baptized",
+		"22": "Laying on of Hands", 
+		"23": "Saints",
+		"24": "Revealed",
+		"25": "Gospel"
+	};
+		for (var i = 0, id = []; i < 25; i++) {
+			id[i] = i;
+		}
+		var firstProp;
+		for(var key in JSONObject) {
+			if(JSONObject.hasOwnProperty(key)) {
+				firstProp = JSONObject[key];
+				id[key-1] = firstProp;
+				key++;
+			}
+		}
+		id.sort(function () {
+			return Math.random(Math.random()) - 0.5;
+		});
+		for (var i = 0; 1 < id.length; i ++){
+			prop = id[i];
+			document.getElementById(i + 1).innerHTML = prop;
+			document.getElementById("13").innerHTML = "Free Space!";
+		}
+
+	</script>
+</body>
+</html>
